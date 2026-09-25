@@ -1,0 +1,1095 @@
+/*==================================================
+  SRINIDHI & CO
+  STYLE.CSS
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+    background:#F8F8F6;
+    color:#1d1d1d;
+    overflow-x:hidden;
+    line-height:1.8;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#F8F8F6;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#222;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#444;
+}
+
+/* Progress Bar */
+
+#progressBar{
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:0%;
+    height:3px;
+
+    background:#000;
+
+    z-index:9999;
+}
+
+/* Loader */
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#F8F8F6;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:10000;
+
+    transition:1s;
+}
+
+.loader-content{
+
+    text-align:center;
+}
+
+.loader-icon{
+
+    font-size:55px;
+
+    margin-bottom:20px;
+}
+
+.loader-content h1{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:42px;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+}
+
+.loader-content p{
+
+    letter-spacing:8px;
+
+    font-size:13px;
+
+    margin-top:8px;
+}
+
+/* Navigation */
+
+header{
+
+    position:fixed;
+
+    width:100%;
+
+    top:0;
+
+    z-index:99999 !important; /* Forces the header to stay layered on top of all scrolling content */
+
+    backdrop-filter:blur(15px);
+
+    background:rgba(248,248,246,.85);
+
+    border-bottom:1px solid #e5e5e5;
+}
+
+nav{
+
+    width:92%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+    height:85px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+}
+
+.logo-icon{
+
+    font-size:34px;
+}
+
+.logo h2{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:26px;
+
+    font-weight:600;
+}
+
+.logo span{
+
+    display:block;
+
+    letter-spacing:5px;
+
+    font-size:10px;
+
+    margin-top:2px;
+}
+
+#menuBtn{
+
+    background:none;
+
+    border:none;
+
+    font-size:36px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+
+
+/*==================================================
+  NAVIGATION DROPDOWN POPUP (REPLACED OLD OVERLAY)
+==================================================*/
+
+/* Position the menu container relative so the popup anchors to it */
+nav {
+    position: relative;
+}
+
+#menuOverlay {
+    position: fixed !important; /* Travels with the navbar as you scroll */
+    top: 85px; /* Locked right below the 85px header navbar */
+    right: 4%; /* Aligns beautifully under the burger icon */
+    width: 280px; 
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+    padding: 20px 0;
+    
+    /* Smooth entrance animations */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px) scale(0.95);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 999999 !important; /* Floats over everything else */
+}
+
+/* Active class triggered by clicking the burger icon */
+#menuOverlay.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+/* We don't need a separate close 'X' button anymore since clicking out or selecting a link closes it */
+#closeBtn {
+    display: none !important;
+}
+
+#menuOverlay ul {
+    list-style: none;
+    text-align: left; /* Left-aligned for a crisp corporate aesthetic */
+    padding: 0;
+    margin: 0;
+}
+
+#menuOverlay li {
+    margin: 0; 
+}
+
+#menuOverlay a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    font-family: 'Inter', sans-serif; 
+    font-size: 16px;
+    font-weight: 400;
+    padding: 14px 24px;
+    border-left: 3px solid transparent; /* Hidden vertical accent line */
+    transition: all 0.25s ease;
+}
+
+/* Premium Highlight Hover Effect */
+#menuOverlay a:hover {
+    background: #f8f8f6; /* Subtle light gray background tint */
+    color: #000;
+    padding-left: 30px; /* Sophisticated nudge to the right */
+    border-left-color: #000; /* Solid black accent stripe reveals itself */
+    letter-spacing: 0px; 
+}
+
+/* Hero */
+
+#hero{
+
+    min-height:100vh;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    width:92%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+    gap:60px;
+}
+
+.hero-left{
+
+    padding-top:120px;
+}
+
+.hero-symbol{
+
+    font-size:60px;
+
+    margin-bottom:20px;
+}
+
+.hero-left h4{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:24px;
+
+    letter-spacing:2px;
+}
+
+.hero-left span{
+
+    display:block;
+
+    letter-spacing:8px;
+
+    font-size:12px;
+
+    margin:15px 0 35px;
+}
+
+.hero-left h1{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:70px;
+
+    line-height:1.15;
+
+    font-weight:600;
+
+    margin-bottom:35px;
+}
+
+.hero-left p{
+
+    max-width:560px;
+
+    font-size:18px;
+
+    color:#555;
+
+    margin-bottom:45px;
+}
+
+.hero-left a{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    background:#111;
+
+    padding:18px 45px;
+
+    border-radius:4px;
+
+    transition:.35s;
+}
+
+.hero-left a:hover{
+
+    background:#333;
+
+    transform:translateY(-3px);
+}
+
+.hero-right{
+
+    display:flex;
+
+    justify-content:flex-end;
+}
+
+.hero-right img{
+
+    width:100%;
+
+    max-width:620px;
+
+    border-radius:8px;
+
+    filter:grayscale(100%);
+
+    transition:.5s;
+}
+
+.hero-right img:hover{
+
+    filter:grayscale(0);
+
+    transform:scale(1.02);
+}
+
+/* Common Sections */
+
+section{
+
+    width:92%;
+
+    max-width:1400px;
+
+    margin:140px auto;
+}
+
+/* .section-title{
+
+    font-size:13px;
+
+    letter-spacing:7px;
+
+    margin-bottom:30px;
+
+    color:#777;
+} */
+
+.section-title {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 7px; /* Kept your premium ultra-wide letter spacing */
+    color: #111111; /* Strong high-contrast charcoal black */
+    font-weight: 600;
+    display: inline-block; /* Restricts the accent line to the length of the text */
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+/* Sleek horizontal anchor line right beneath the text */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 35px;
+    height: 2px;
+    background-color: #111111;
+}
+
+section h2{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:52px;
+
+    margin-bottom:35px;
+
+    font-weight:600;
+}
+
+section>p{
+
+    max-width:800px;
+
+    color:#555;
+
+    font-size:18px;
+}
+
+/* Expertise */
+
+.practice-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+    margin-top:60px;
+}
+
+.practice-card{
+
+    border:1px solid #ddd;
+
+    padding:45px;
+
+    font-size:22px;
+
+    font-family:'Playfair Display',serif;
+
+    transition:.35s;
+
+    cursor:pointer;
+
+    background:#fff;
+}
+
+.practice-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#000;
+}
+/*==========================
+ TEAM
+==========================*/
+
+.team-grid {
+    display: grid !important;
+    grid-template-columns: repeat(6, 1fr) !important;
+    gap: 35px;
+    margin-top: 60px;
+    max-width: 1100px; /* Restricts the overall width of the grid so it doesn't take over large screens */
+    margin-left: auto;  /* Centers the entire team grid container */
+    margin-right: auto; /* Centers the entire team grid container */
+}
+
+.member {
+    text-align: center;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    transition: .35s;
+    overflow: hidden;
+}
+
+/* Row 1: The first 3 members take up 2 columns each */
+.member:nth-child(1),
+.member:nth-child(2),
+.member:nth-child(3) {
+    grid-column: span 2 !important;
+}
+
+/* Row 2: The last 2 members take up 2 columns each, centered under the row above */
+.member:nth-child(4) {
+    grid-column: 2 / span 2 !important;
+}
+
+.member:nth-child(5) {
+    grid-column: 4 / span 2 !important;
+}
+
+.member:hover {
+    transform: translateY(-5px); /* Subtle shift rather than a big jump */
+    box-shadow: 0 15px 35px rgba(0,0,0,.05);
+}
+
+.member img {
+    width: 100%;
+    height: 240px; /* Reduced from 320px to make the blocks sleek and balanced */
+    object-fit: cover;
+    display: block;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+.member:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.02);
+}
+
+.member h3 {
+    margin-top: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; /* Toned down slightly to match the smaller layout */
+    font-weight: 600;
+}
+
+.member p {
+    margin: 8px 0 20px; /* Cleaned up the bottom padding */
+    color: #777;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 11px;
+}
+
+/*==========================
+ TESTIMONIALS
+==========================*/
+
+.testimonial-slider{
+
+    margin-top:70px;
+
+    position:relative;
+
+    max-width:900px;
+
+}
+
+.testimonial{
+
+    display:none;
+
+    opacity:0;
+
+    transition:.5s;
+
+    font-family:'Playfair Display',serif;
+
+    font-size:34px;
+
+    line-height:1.6;
+
+    color:#222;
+
+}
+
+.testimonial.active{
+
+    display:block;
+
+    opacity:1;
+
+    animation:fade .8s ease;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*==========================
+ CONTACT
+==========================*/
+.contact-wrapper{
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    margin-top: 60px;
+
+}
+
+.contact-info h3{
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 34px;
+
+    margin-bottom: 30px;
+
+}
+
+.contact-info p{
+
+    margin-bottom: 15px;
+
+    color: #555;
+
+    font-size: 18px;
+
+}
+
+.contact-label {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #999; 
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+input,
+textarea{
+
+    width:100%;
+
+    padding:18px;
+
+    border:1px solid #ddd;
+
+    background:#fff;
+
+    font-size:16px;
+
+    font-family:inherit;
+
+    transition:.3s;
+
+}
+
+input:focus,
+textarea:focus{
+
+    outline:none;
+
+    border-color:#000;
+
+}
+
+textarea{
+
+    resize:none;
+
+}
+
+form button{
+
+    width:260px;
+
+    padding:18px;
+
+    border:none;
+
+    background:#111;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+form button:hover{
+
+    background:#333;
+
+}
+
+/*==========================
+ FOOTER
+==========================*/
+
+footer{
+
+    margin-top:120px;
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    border-top:1px solid #ddd;
+
+    color:#777;
+
+    letter-spacing:2px;
+
+    font-size:13px;
+
+}
+
+/*==========================
+ ANIMATIONS
+==========================*/
+
+section{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:1s;
+
+}
+
+section.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/*==========================
+ RESPONSIVE
+==========================*/
+
+@media(max-width:1100px){
+
+    #hero{
+        grid-template-columns:1fr;
+        padding-top:120px;
+    }
+
+    .hero-right{
+        order:-1;
+        justify-content:center;
+    }
+
+    .hero-left{
+        padding-top:0;
+        text-align:center;
+    }
+
+    .hero-left p{
+        margin:auto auto 45px;
+    }
+
+    .practice-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .contact-wrapper{
+        grid-template-columns:1fr;
+        gap:50px;
+    }
+}
+
+@media(max-width:768px){
+
+    nav{
+        height:75px;
+    }
+
+    .logo h2{
+        font-size:22px;
+    }
+
+    .logo span{
+        font-size:9px;
+        letter-spacing:4px;
+    }
+
+    .hero-left h1{
+        font-size:46px;
+    }
+
+    .hero-left p{
+        font-size:17px;
+    }
+
+    .hero-left a{
+        padding:16px 30px;
+    }
+
+    .hero-right img{
+        max-width:100%;
+    }
+
+    section{
+        margin:90px auto;
+    }
+
+    section h2{
+        font-size:40px;
+    }
+
+    .practice-grid{
+        grid-template-columns:1fr;
+    }
+
+    /* Fixed Layout: Stacks all 5 team members smoothly into 1 column on tablet screens */
+    .team-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .member:nth-child(1),
+    .member:nth-child(2),
+    .member:nth-child(3),
+    .member:nth-child(4),
+    .member:nth-child(5) {
+        grid-column: auto !important;
+    }
+
+    .testimonial{
+        font-size:26px;
+    }
+
+    .contact-wrapper{
+        grid-template-columns:1fr;
+    }
+
+    #menuOverlay a{
+        font-size:34px;
+    }
+
+    #closeBtn{
+        right:25px;
+        top:25px;
+    }
+}
+
+@media(max-width:500px){
+
+    .hero-left h1{
+        font-size:38px;
+    }
+
+    section h2{
+        font-size:32px;
+    }
+
+    .loader-content h1{
+        font-size:32px;
+    }
+
+    .loader-icon{
+        font-size:45px;
+    }
+
+    .logo{
+        gap:10px;
+    }
+
+    .logo-icon{
+        font-size:28px;
+    }
+
+    #menuBtn{
+        font-size:30px;
+    }
+}
+/*==========================
+ CUSTOM SUCCESS MODAL
+==========================*/
+.custom-modal {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: rgba(0, 0, 0, 0.5) !important; /* Smooth dark overlay */
+    backdrop-filter: blur(5px) !important; /* Premium modern blurred effect */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 99999 !important; /* Forces it to float above everything else */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+/* Toggles the popup into view when submission goes through */
+.custom-modal.show {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+.modal-content {
+    background-color: #ffffff !important;
+    padding: 40px !important;
+    width: 90% !important;
+    max-width: 460px !important;
+    text-align: center !important;
+    border-radius: 4px !important;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3) !important;
+    transform: translateY(30px);
+    transition: transform 0.4s ease;
+}
+
+.custom-modal.show .modal-content {
+    transform: translateY(0) !important;
+}
+
+.modal-content h4 {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 26px !important;
+    color: #111 !important;
+    margin-bottom: 12px !important;
+    margin-top: 0 !important;
+}
+
+.modal-content p {
+    font-size: 15px !important;
+    color: #666 !important;
+    line-height: 1.6 !important;
+    margin-bottom: 25px !important;
+}
+
+.modal-content button {
+    background-color: #111 !important;
+    color: #fff !important;
+    border: none !important;
+    padding: 12px 30px !important;
+    font-size: 14px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    cursor: pointer !important;
+    transition: 0.3s !important;
+}
+
+.modal-content button:hover {
+    background-color: #333 !important;
+}
+
+/*==================================================
+  1. BRAND STYLING FOR ABOUT US SECTION (CRISP BLACK)
+==================================================*/
+.about-columns-container .contact-style-brand {
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 700 !important;         
+    font-style: normal !important;       
+    color: #111111 !important;           /* Keeps your About paragraph header dark & premium */
+    font-size: 1.1em !important;         
+    letter-spacing: -0.01em !important;  
+    display: inline !important;
+}
+
+/*==================================================
+  2. BRAND STYLING FOR FOOTER SECTION (SOFT GREY INHERIT)
+==================================================*/
+footer .contact-style-brand {
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 700 !important;         
+    font-style: normal !important;       
+    color: inherit !important;           /* Smoothly matches the grey color of the footer line */
+    font-size: 1.1em !important;         
+}
+
+/*==================================================
+  3. THE PERFECT TWO-COLUMN ABOUT LAYOUT (GRID ALIGNED)
+==================================================*/
+@media (min-width: 768px) {
+    .about-columns-container {
+        column-count: 2 !important;
+        column-gap: 50px !important;
+        margin-top: 35px !important; 
+        width: 100% !important;
+    }
+}
+
+/* Base Paragraph properties matching your Hero text size and spacing perfectly */
+.about-columns-container p {
+    font-family: 'Inter', sans-serif !important; 
+    font-size: 17px !important;                 /* Matched exactly to your Hero paragraph text size */
+    font-weight: 400 !important;                
+    color: #555555 !important;                  
+    text-align: left !important;                
+    line-height: 1.8 !important;                /* Matched exactly to your template line height */
+    
+    background: #ffffff !important;
+    padding: 24px 28px !important;              
+    border-radius: 6px !important;
+    border-left: 2px solid transparent !important; 
+    margin-bottom: 24px !important;
+    letter-spacing: normal !important;
+    
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    break-inside: avoid !important;     
+}
+
+/* Premium Hover Highlight Effect */
+.about-columns-container p:hover {
+    color: #111111 !important;          
+    background-color: #fafafa !important;
+    border-left: 2px solid #111111 !important; 
+    
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03) !important; 
+    transform: translateY(-3px) !important; 
+    cursor: pointer;
+}
+
+/*==================================================
+  4. RESPONSIVE REPAIR: MOBILE FORM AND INPUT BLEED FIX
+==================================================*/
+@media (max-width: 768px) {
+    /* Prevents horizontal stretching on small screens */
+    input, textarea, form, .contact-wrapper {
+        max-width: 100% !important;
+    }
+    
+    form button {
+        width: 100% !important; /* Drops button layout to full container width on phone views */
+    }
+}
+
+/*==================================================
+  FORCE MODAL CONTENT BRAND PHRASE TO MATCH SEAMLESSLY
+==================================================*/
+.modal-content p .contact-style-brand {
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 700 !important;         /* Matches crisp thickness */
+    font-style: normal !important;       
+    color: #111111 !important;           /* Brings both the words and the ampersand to the same deep black color */
+    font-size: 1.15em !important;        /* Naturally scales up the brand block to sit beautifully inside the sentence */
+    display: inline-block !important;
+    letter-spacing: normal !important;
+}
