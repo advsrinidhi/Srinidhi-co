@@ -501,12 +501,12 @@ section>p{
 
 .team-grid {
     display: grid !important;
-    grid-template-columns: repeat(6, 1fr) !important;
-    gap: 35px;
+    grid-template-columns: repeat(2, 1fr) !important; /* Creates 2 equal columns on top & bottom */
+    gap: 40px !important;
     margin-top: 60px;
-    max-width: 1100px; /* Restricts the overall width of the grid so it doesn't take over large screens */
-    margin-left: auto;  /* Centers the entire team grid container */
-    margin-right: auto; /* Centers the entire team grid container */
+    max-width: 850px; /* Locks grid width so cards remain beautifully proportioned */
+    margin-left: auto;  
+    margin-right: auto; 
 }
 
 .member {
@@ -515,32 +515,17 @@ section>p{
     border: 1px solid #e5e5e5;
     transition: .35s;
     overflow: hidden;
-}
-
-/* Row 1: The first 3 members take up 2 columns each */
-.member:nth-child(1),
-.member:nth-child(2),
-.member:nth-child(3) {
-    grid-column: span 2 !important;
-}
-
-/* Row 2: The last 2 members take up 2 columns each, centered under the row above */
-.member:nth-child(4) {
-    grid-column: 2 / span 2 !important;
-}
-
-.member:nth-child(5) {
-    grid-column: 4 / span 2 !important;
+    grid-column: auto !important; /* Clears out old 5-member column span rules */
 }
 
 .member:hover {
-    transform: translateY(-5px); /* Subtle shift rather than a big jump */
+    transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(0,0,0,.05);
 }
 
 .member img {
     width: 100%;
-    height: 240px; /* Reduced from 320px to make the blocks sleek and balanced */
+    height: 320px; /* Proportionate height for 2-column cards */
     object-fit: cover;
     display: block;
     filter: grayscale(100%);
@@ -555,12 +540,12 @@ section>p{
 .member h3 {
     margin-top: 20px;
     font-family: 'Playfair Display', serif;
-    font-size: 22px; /* Toned down slightly to match the smaller layout */
+    font-size: 22px;
     font-weight: 600;
 }
 
 .member p {
-    margin: 8px 0 20px; /* Cleaned up the bottom padding */
+    margin: 8px 0 20px;
     color: #777;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -1093,3 +1078,4 @@ footer .contact-style-brand {
     display: inline-block !important;
     letter-spacing: normal !important;
 }
+
