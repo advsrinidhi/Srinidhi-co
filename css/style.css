@@ -872,8 +872,9 @@ section.show{
         grid-template-columns:1fr;
     }
 
-    #menuOverlay a{
-        font-size:34px;
+   #menuOverlay a{
+        font-size:15px !important;
+        white-space:nowrap;
     }
 
     #closeBtn{
